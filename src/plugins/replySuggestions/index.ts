@@ -1,12 +1,12 @@
-import { definePlugin } from "@api/plugins";
+import { definePlugin } from "@utils/plugins";
 import { Devs } from "@utils/constants";
 import { findByPropsLazy } from "@webpack";
 import { FluxDispatcher } from "@webpack/common";
 
+// Rest of the code remains exactly the same, just the import changed
 const MessageStore = findByPropsLazy("getMessage", "getMessages");
 const SelectedChannelStore = findByPropsLazy("getChannelId");
 
-// Simple response generator
 class ResponseGenerator {
     private patterns = new Map([
         [/(how are|how're) you/i, ["I'm good, thanks!", "Doing well, you?", "Pretty good!"]],
